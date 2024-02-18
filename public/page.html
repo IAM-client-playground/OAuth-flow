@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OAuth flow</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        padding: 20px;
+        background-color: #f0f2f5;
+        color: #333;
+        text-align: center;
+      }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      h1 {
+        margin: 0;
+        flex-grow: 1;
+        text-align: left;
+      }
+      button {
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+      }
+      button:hover {
+        background-color: #010101;
+        color: #fff;
+      }
+      pre {
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 5px;
+        text-align: left;
+        font-size: 16px;
+        color: #666;
+        max-height: 400px;
+        overflow-y: auto;
+        margin: 0 auto;
+        width: 90%;
+        max-width: 800px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>{{oauth-flow}}</h1>
+      <button onclick="window.location.href='/'">Back to Home</button>
+    </div>
+    <div id="authDetails">{{authorize-detail}}</div>
+  </body>
+</html>

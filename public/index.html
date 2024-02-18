@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Select Authentication Method</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        width: 80%;
+        max-width: 600px;
+      }
+      .tabs {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #ddd;
+        margin: 20px 0;
+        border-radius: 5px;
+        padding: 0;
+      }
+
+      .tab-buttons,
+      .logout-button {
+        display: flex;
+      }
+
+      .tablink {
+        background-color: inherit;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        padding: 14px 16px;
+        transition: background-color 0.3s;
+      }
+
+      .tablink:hover {
+        background-color: #bbb;
+      }
+
+      .logout-button {
+        margin-left: auto;
+        background-color: #dc3545; /* Logout button color */
+      }
+
+      .logout-button:hover {
+        background-color: #c82333;
+      }
+
+      .tabs button.active {
+        background-color: #ccc;
+      }
+      .tab-content {
+        padding: 20px;
+      }
+      .tab-content.active {
+        display: block;
+      }
+      .card {
+        background-color: #464e55;
+        color: #ffffff;
+        padding: 20px;
+        width: 100px; /* Set width to your preferred size */
+        height: 100px; /* Set height to the same as width to make it square */
+        margin-bottom: 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        display: inline-flex; /* Using inline-flex to center the content and keep cards in line */
+        justify-content: center; /* Center content horizontally */
+        align-items: center; /* Center content vertically */
+        text-align: center; /* Ensure text inside the card is centered */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+      }
+
+      .card:hover {
+        background-color: #000000;
+      }
+      .btn-logout {
+        background-color: #dc3545;
+        color: #ffffff;
+        padding: 10px 15px;
+        margin-top: 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        display: inline-block;
+        transition: background-color 0.3s;
+      }
+
+      .btn-logout:hover {
+        background-color: #c82333;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>OAuth Flow</h1>
+
+      <div id="SP" class="tab-content">
+        <div class="card" onclick="window.location.href='/authcode/login';">
+          Auth code
+        </div>
+        <div class="card" onclick="window.location.href='/oidc/login';">
+          Implicit PKCE
+        </div>
+        <div class="card" onclick="window.location.href='/client-credentials';">
+          Client credentials
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
